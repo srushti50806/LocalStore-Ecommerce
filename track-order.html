@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FreshMart - Track Order</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛒 FreshMart
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="products.html">Products</a>
+
+            <a href="index.html#categories">Categories</a>
+
+            <a href="index.html#about">About</a>
+
+            <a href="index.html#contact">Contact</a>
+
+        </nav>
+
+        <a href="cart.html" class="cart">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </header>
+
+
+    <!-- HEADER -->
+
+    <section class="tracking-header">
+
+        <p>FRESHMART</p>
+
+        <h1>Track Your Order</h1>
+
+        <span>
+            Enter your order ID to check your order status.
+        </span>
+
+    </section>
+
+
+    <!-- TRACKING -->
+
+    <main class="tracking-page">
+
+        <div class="tracking-search">
+
+            <h2>Enter Order ID</h2>
+
+            <div class="tracking-input">
+
+                <input
+                    type="text"
+                    id="orderIdInput"
+                    placeholder="Example: FM12345678"
+                >
+
+                <button
+                    onclick="trackOrder()"
+                >
+                    Track Order
+                </button>
+
+            </div>
+
+            <p id="tracking-message"></p>
+
+        </div>
+
+
+        <!-- ORDER DETAILS -->
+
+        <div
+            id="orderTracking"
+            class="order-tracking"
+        >
+
+            <!-- Tracking appears here -->
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <h2>🛒 FreshMart</h2>
+
+                <p>
+                    Your trusted local grocery store.
+                    Fresh products delivered to your door.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="checkout.html">Checkout</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Categories</h3>
+
+                <a href="products.html">Fruits</a>
+                <a href="products.html">Vegetables</a>
+                <a href="products.html">Dairy</a>
+                <a href="products.html">Groceries</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Contact Us</h3>
+
+                <p>📞 +91 98765 43210</p>
+                <p>📧 support@freshmart.com</p>
+                <p>📍 Your Local City, India</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FreshMart. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/track-order.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FreshMart - Product Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛒 FreshMart
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="index.html#categories">
+                Categories
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+        <a href="cart.html" class="cart">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </header>
+
+
+    <!-- PRODUCT DETAILS -->
+
+    <main class="product-details-page">
+
+        <div
+            id="productDetails"
+            class="product-details-container"
+        >
+
+            <!-- Product details will appear here -->
+
+        </div>
+
+        <!-- REVIEWS SECTION -->
+
+<section class="reviews-section">
+
+    <div class="reviews-header">
+
+        <h2>Customer Reviews</h2>
+
+        <p>
+            Share your experience with this product.
+        </p>
+
+    </div>
+
+
+    <!-- REVIEW FORM -->
+
+    <div class="review-form">
+
+        <h3>Write a Review</h3>
+
+        <div class="star-input">
+
+            <span>Select Rating:</span>
+
+            <button type="button" onclick="selectRating(1)">★</button>
+            <button type="button" onclick="selectRating(2)">★</button>
+            <button type="button" onclick="selectRating(3)">★</button>
+            <button type="button" onclick="selectRating(4)">★</button>
+            <button type="button" onclick="selectRating(5)">★</button>
+
+        </div>
+
+        <textarea
+            id="reviewText"
+            placeholder="Write your review..."
+            rows="4"
+        ></textarea>
+
+        <button
+            type="button"
+            class="submit-review-btn"
+            onclick="submitReview()"
+        >
+            Submit Review
+        </button>
+
+    </div>
+
+
+    <!-- REVIEWS -->
+
+    <div
+        id="reviewsList"
+        class="reviews-list"
+    >
+
+        <!-- Reviews appear here -->
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <h2>
+                    🛒 FreshMart
+                </h2>
+
+                <p>
+                    Your trusted local grocery store.
+                    Fresh products delivered to your door.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Categories
+                </h3>
+
+                <a href="products.html">
+                    Fruits
+                </a>
+
+                <a href="products.html">
+                    Vegetables
+                </a>
+
+                <a href="products.html">
+                    Dairy
+                </a>
+
+                <a href="products.html">
+                    Groceries
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    📧 support@freshmart.com
+                </p>
+
+                <p>
+                    📍 Your Local City, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FreshMart. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+
+
+    <script>
+
+        const productId =
+            Number(
+                new URLSearchParams(
+                    window.location.search
+                ).get("id")
+            );
+
+
+        const product =
+            products.find(
+                item => item.id === productId
+            );
+
+
+        const container =
+            document.getElementById(
+                "productDetails"
+            );
+
+
+        if (!product) {
+
+            container.innerHTML = `
+
+                <div class="product-not-found">
+
+                    <h2>
+                        Product Not Found
+                    </h2>
+
+                    <p>
+                        Sorry, this product does not exist.
+                    </p>
+
+                    <a
+                        href="products.html"
+                        class="btn primary-btn"
+                    >
+                        Back to Products
+                    </a>
+
+                </div>
+
+            `;
+
+        } else {
+
+            container.innerHTML = `
+
+                <div class="product-detail-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+
+                <div class="product-detail-info">
+
+                    <span class="product-category">
+                        ${product.category}
+                    </span>
+
+
+                    <h1>
+                        ${product.name}
+                    </h1>
+
+
+                    <div class="detail-rating">
+
+                        ${"⭐".repeat(product.rating)}
+
+                        <span>
+                            (${product.rating}/5)
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="detail-price">
+                        ₹${product.price}
+                    </h2>
+
+
+                    <p class="detail-description">
+                        ${product.description}
+                    </p>
+
+
+                    <div class="quantity-selector">
+
+                        <span>
+                            Quantity
+                        </span>
+
+                        <div>
+
+                            <button
+                                onclick="changeDetailQuantity(-1)"
+                            >
+                                −
+                            </button>
+
+                            <strong id="detailQuantity">
+                                1
+                            </strong>
+
+                            <button
+                                onclick="changeDetailQuantity(1)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="detail-add-btn"
+                        onclick="addDetailProduct()"
+                    >
+                        🛒 Add to Cart
+                    </button>
+
+
+                    <a
+                        href="products.html"
+                        class="back-products"
+                    >
+                        ← Back to Products
+                    </a>
+
+                </div>
+
+            `;
+
+        }
+
+
+        let detailQuantity = 1;
+
+
+        function changeDetailQuantity(change) {
+
+            detailQuantity += change;
+
+
+            if (detailQuantity < 1) {
+                detailQuantity = 1;
+            }
+
+
+            document.getElementById(
+                "detailQuantity"
+            ).textContent = detailQuantity;
+
+        }
+
+
+        function addDetailProduct() {
+
+            if (!product) return;
+
+
+            let cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+
+            const existingProduct =
+                cart.find(
+                    item =>
+                        Number(item.id) ===
+                        Number(product.id)
+                );
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity =
+                    Number(existingProduct.quantity) +
+                    detailQuantity;
+
+            } else {
+
+                cart.push({
+
+                    id: product.id,
+
+                    name: product.name,
+
+                    price: Number(product.price),
+
+                    quantity: detailQuantity
+
+                });
+
+            }
+
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            updateCartCount();
+
+
+            alert(
+                `${detailQuantity} × ${product.name} added to cart!`
+            );
+
+        }
+
+        // ================= REVIEWS =================
+
+let selectedRating = 0;
+
+
+// Select rating
+
+function selectRating(rating) {
+
+    selectedRating = rating;
+
+    const buttons =
+        document.querySelectorAll(".star-input button");
+
+
+    buttons.forEach((button, index) => {
+
+        if (index < rating) {
+
+            button.classList.add("selected");
+
+        } else {
+
+            button.classList.remove("selected");
+
+        }
+
+    });
+
+}
+
+
+// Get reviews
+
+function getReviews() {
+
+    const allReviews =
+        JSON.parse(
+            localStorage.getItem("productReviews")
+        ) || {};
+
+    return allReviews[productId] || [];
+
+}
+
+
+// Save review
+
+function saveReview(review) {
+
+    const allReviews =
+        JSON.parse(
+            localStorage.getItem("productReviews")
+        ) || {};
+
+
+    if (!allReviews[productId]) {
+
+        allReviews[productId] = [];
+
+    }
+
+
+    allReviews[productId].push(review);
+
+
+    localStorage.setItem(
+        "productReviews",
+        JSON.stringify(allReviews)
+    );
+
+}
+
+
+// Submit review
+
+function submitReview() {
+
+    const reviewText =
+        document
+            .getElementById("reviewText")
+            .value
+            .trim();
+
+
+    if (selectedRating === 0) {
+
+        alert("Please select a rating.");
+
+        return;
+
+    }
+
+
+    if (reviewText === "") {
+
+        alert("Please write a review.");
+
+        return;
+
+    }
+
+
+    const review = {
+
+        rating: selectedRating,
+
+        text: reviewText,
+
+        date: new Date().toLocaleDateString()
+
+    };
+
+
+    saveReview(review);
+
+
+    document.getElementById(
+        "reviewText"
+    ).value = "";
+
+
+    selectedRating = 0;
+
+
+    document
+        .querySelectorAll(".star-input button")
+        .forEach(button => {
+
+            button.classList.remove("selected");
+
+        });
+
+
+    displayReviews();
+
+
+    alert("Thank you for your review! ⭐");
+
+}
+
+
+// Display reviews
+
+function displayReviews() {
+
+    const container =
+        document.getElementById("reviewsList");
+
+    if (!container) return;
+
+    const reviews = getReviews();
+
+    if (reviews.length === 0) {
+
+        container.innerHTML = `
+            <div class="no-reviews">
+                <p>
+                    No reviews yet.
+                    Be the first to review this product!
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = "";
+
+
+    reviews.forEach((review, index) => {
+
+        const reviewElement =
+            document.createElement("div");
+
+        reviewElement.className =
+            "review-card";
+
+
+        reviewElement.innerHTML = `
+
+            <div class="review-top">
+
+                <div class="review-stars">
+                    ${"⭐".repeat(review.rating)}
+                </div>
+
+                <button
+                    class="delete-review-btn"
+                    onclick="deleteReview(${index})"
+                    title="Delete Review"
+                >
+                    🗑️
+                </button>
+
+            </div>
+
+
+            <p>
+                ${review.text}
+            </p>
+
+
+            <small>
+                ${review.date}
+            </small>
+
+        `;
+
+
+        container.appendChild(reviewElement);
+
+    });
+
+}
+
+function deleteReview(index) {
+
+    const confirmDelete =
+        confirm(
+            "Are you sure you want to delete this review?"
+        );
+
+
+    if (!confirmDelete) {
+        return;
+    }
+
+
+    const allReviews =
+        JSON.parse(
+            localStorage.getItem("productReviews")
+        ) || {};
+
+
+    if (!allReviews[productId]) {
+        return;
+    }
+
+
+    allReviews[productId].splice(index, 1);
+
+
+    localStorage.setItem(
+        "productReviews",
+        JSON.stringify(allReviews)
+    );
+
+
+    displayReviews();
+
+}
+
+
+        updateCartCount();
+
+    </script>
+
+</body>
+
+</html>

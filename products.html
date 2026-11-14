@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Products</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛒 FreshMart
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="products.html#categories">Categories</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <a href="cart.html" class="cart">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </header>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="products-header">
+
+        <p>FRESHMART STORE</p>
+
+        <h1>Our Products</h1>
+
+        <span>
+            Fresh groceries and everyday essentials at great prices.
+        </span>
+
+    </section>
+
+
+    <!-- SEARCH AND FILTER -->
+
+    <section class="product-controls">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+            >
+
+            <button onclick="searchProducts()">
+                🔍 Search
+            </button>
+
+        </div>
+
+
+        <div class="filters">
+
+            <select id="categoryFilter" onchange="filterProducts()">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="Fruits">
+                    Fruits
+                </option>
+
+                <option value="Vegetables">
+                    Vegetables
+                </option>
+
+                <option value="Dairy">
+                    Dairy
+                </option>
+
+                <option value="Bakery">
+                    Bakery
+                </option>
+
+                <option value="Beverages">
+                    Beverages
+                </option>
+
+                <option value="Groceries">
+                    Groceries
+                </option>
+
+            </select>
+
+
+            <select id="sortFilter" onchange="sortProducts()">
+
+                <option value="default">
+                    Sort By
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+                <option value="rating">
+                    Highest Rated
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT COUNT -->
+
+    <div class="product-result">
+
+        <span id="productCount">
+            Showing 12 products
+        </span>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="all-products">
+
+        <div
+            class="all-product-container"
+            id="productContainer"
+        >
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <h2>🛒 FreshMart</h2>
+
+                <p>
+                    Your trusted local grocery store.
+                    Fresh products delivered to your door.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Categories</h3>
+
+                <a href="products.html">Fruits</a>
+                <a href="products.html">Vegetables</a>
+                <a href="products.html">Dairy</a>
+                <a href="products.html">Groceries</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact Us</h3>
+
+                <p>📞 +91 93800 28715</p>
+                <p>📧 support@freshmart.com</p>
+                <p>📍 Your Local City, India</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FreshMart. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

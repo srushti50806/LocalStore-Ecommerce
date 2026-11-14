@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Fresh Products, Delivered to Your Door</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🛒 FreshMart
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="cart.html" class="cart">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small">WELCOME TO FRESHMART</p>
+
+            <h1>
+                Fresh Products,
+                <span>Delivered to Your Door</span>
+            </h1>
+
+            <p>
+                Shop fresh groceries and everyday essentials
+                from your trusted local store.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="products.html" class="btn primary-btn">
+                    Shop Now
+                </a>
+
+                <a href="#categories" class="btn secondary-btn">
+                    Explore Categories
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80"
+                alt="Fresh groceries">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>Shop by Category</h2>
+
+            <span>
+                Everything you need, all in one place.
+            </span>
+
+        </div>
+
+
+        <div class="category-container">
+
+            <div class="category-card">
+
+                <div class="category-icon">🍎</div>
+
+                <h3>Fruits</h3>
+
+                <p>Fresh and healthy fruits</p>
+
+                <a href="products.html">Shop Now →</a>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🥦</div>
+
+                <h3>Vegetables</h3>
+
+                <p>Fresh vegetables every day</p>
+
+                <a href="products.html">Shop Now →</a>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🥛</div>
+
+                <h3>Dairy</h3>
+
+                <p>Milk, cheese and more</p>
+
+                <a href="products.html">Shop Now →</a>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🍞</div>
+
+                <h3>Bakery</h3>
+
+                <p>Freshly baked products</p>
+
+                <a href="products.html">Shop Now →</a>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🥤</div>
+
+                <h3>Beverages</h3>
+
+                <p>Refreshing drinks and juices</p>
+
+                <a href="products.html">Shop Now →</a>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">🛒</div>
+
+                <h3>Groceries</h3>
+
+                <p>Daily household essentials</p>
+
+                <a href="products.html">Shop Now →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= POPULAR PRODUCTS ================= -->
+
+    <section class="products-section">
+
+        <div class="section-heading">
+
+            <p>OUR PRODUCTS</p>
+
+            <h2>Popular Products</h2>
+
+            <span>Fresh products loved by our customers.</span>
+
+        </div>
+
+
+        <div class="product-container">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=500&q=80"
+                    alt="Apple">
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Fruits
+                    </span>
+
+                    <h3>Fresh Apples</h3>
+
+                    <p>Premium quality fresh apples.</p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <strong>₹120/kg</strong>
+
+                        <button onclick="addToCart('Fresh Apples', 120)">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=500&q=80"
+                    alt="Milk">
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Dairy
+                    </span>
+
+                    <h3>Fresh Milk</h3>
+
+                    <p>Pure and fresh dairy milk.</p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <strong>₹60</strong>
+
+                        <button onclick="addToCart('Fresh Milk', 60)">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80"
+                    alt="Bread">
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Bakery
+                    </span>
+
+                    <h3>Fresh Bread</h3>
+
+                    <p>Soft and freshly baked bread.</p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <strong>₹45</strong>
+
+                        <button onclick="addToCart('Fresh Bread', 45)">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=500&q=80"
+                    alt="Tomatoes">
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Vegetables
+                    </span>
+
+                    <h3>Fresh Tomatoes</h3>
+
+                    <p>Farm fresh red tomatoes.</p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <strong>₹40/kg</strong>
+
+                        <button onclick="addToCart('Fresh Tomatoes', 40)">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=500&q=80"
+                    alt="Orange Juice">
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Beverages
+                    </span>
+
+                    <h3>Orange Juice</h3>
+
+                    <p>Refreshing natural orange juice.</p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <strong>₹90</strong>
+
+                        <button onclick="addToCart('Orange Juice', 90)">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=500&q=80"
+                    alt="Rice">
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Groceries
+                    </span>
+
+                    <h3>Premium Rice</h3>
+
+                    <p>High quality premium rice.</p>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <strong>₹80/kg</strong>
+
+                        <button onclick="addToCart('Premium Rice', 80)">
+                            + Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="why-us" id="about">
+
+        <div class="section-heading">
+
+            <p>WHY FRESHMART?</p>
+
+            <h2>Why Choose Us?</h2>
+
+            <span>
+                We make your everyday shopping simple and convenient.
+            </span>
+
+        </div>
+
+
+        <div class="why-container">
+
+            <div class="why-card">
+
+                <div>🌱</div>
+
+                <h3>Fresh & Quality</h3>
+
+                <p>
+                    We provide fresh and high-quality products.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div>🚚</div>
+
+                <h3>Fast Delivery</h3>
+
+                <p>
+                    Get your groceries delivered quickly.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div>🔒</div>
+
+                <h3>Secure Payment</h3>
+
+                <p>
+                    Safe and secure checkout experience.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div>⭐</div>
+
+                <h3>Trusted Store</h3>
+
+                <p>
+                    A trusted local store for everyday needs.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROMOTIONAL BANNER ================= -->
+
+    <section class="promo">
+
+        <div>
+
+            <p>FRESH DEALS EVERY DAY</p>
+
+            <h2>
+                Save More on Your Everyday Essentials
+            </h2>
+
+            <p>
+                Discover great products at affordable prices.
+            </p>
+
+            <a href="products.html" class="btn primary-btn">
+                Shop Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <h2>🛒 FreshMart</h2>
+
+                <p>
+                    Your trusted local grocery store.
+                    Fresh products delivered to your door.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Categories</h3>
+
+                <a href="products.html">Fruits</a>
+                <a href="products.html">Vegetables</a>
+                <a href="products.html">Dairy</a>
+                <a href="products.html">Groceries</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact Us</h3>
+
+                <p>📞 +91 98765 43210</p>
+                <p>📧 support@freshmart.com</p>
+                <p>📍 Your Local City, India</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FreshMart. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
